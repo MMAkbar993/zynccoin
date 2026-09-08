@@ -1,0 +1,17 @@
+{
+  "orders": [
+    {
+      "id": "5e01eee9-8d77-44ee-8935-da275c9fa909",
+      "market_id": "btc-usdt",
+      "side": "buy",
+      "order_type": "limit",
+      "price": 100,
+      "size_original": 0.01,
+      "size_remaining": 0.01,
+      "status": "open",
+      "created_at": 1786393768
+    }
+  ],
+  "trades": [],
+  "next_trade_id": 1
+}
