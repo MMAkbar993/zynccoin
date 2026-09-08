@@ -1,0 +1,22 @@
+# Render Blueprint.
+#
+# This app runs a CUSTOM Node server (client/server.js): it hosts the WebSocket
+# endpoints (/ws/markets, /ws/trading) and initialises the market + matching
+# engines on globalThis before Next boots — every /api/v1/* route depends on
+# those globals. It therefore needs a persistent Node process and CANNOT run on
+# serverless platforms such as Vercel. See DEPLOYMENT.md.
+services:
+  - type: web
+    name: zynccoin
+    runtime: node
+    plan: free
+    # Build from the repo root so the hoisted workspace deps (next, ws, react…)
+    # are installed and `next build` runs in the client workspace.
+    buildCommand: npm install && npm run client:build
+    # Start the client workspace directly. Do NOT use the root `npm run start`:
+    # its `prestart` hook deletes client/.next, which would wipe the build above.
+    startCommand: npm run start -w zync-client
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
