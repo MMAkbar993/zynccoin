@@ -10,8 +10,6 @@ dist/
 build/
 
 # env / secrets
-.env
-.env.local
 .env.*.local
 *.pem
 
@@ -37,3 +35,7 @@ coverage/
 node_modules
 .npmrc
 .npmrc
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+config.bat
