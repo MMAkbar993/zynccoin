@@ -16,8 +16,8 @@
     "deploy": "npx hardhat run contracts/scripts/deploy.cjs --network localhost --config contracts/hardhat.config.cjs",
     "compile": "node scripts/compile-and-dev.mjs",
     "test:contracts": "node scripts/test-contracts.mjs",
-    "dev": "node init && npm run dev -w zync-client",
-    "start": "node init && npm run start -w zync-client",
+    "dev": "npm run dev -w zync-client",
+    "start": "npm run start -w zync-client",
     "client:build": "npm run build -w zync-client",
     "test": "node --test client/test/*.test.js"
   },
